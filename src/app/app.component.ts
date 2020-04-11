@@ -23,6 +23,11 @@ export class AppComponent implements OnInit {
       icon: 'trash'
     },
     {
+      title: 'Shapes 2D',
+      url: '/Shapes2D',
+      icon: 'paper-plane'
+    },
+    {
       title: 'Graphing',
       url: '/Graphing',
       icon: 'paper-plane'

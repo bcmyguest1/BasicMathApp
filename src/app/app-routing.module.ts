@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'Graphing',
+    redirectTo: 'BasicArithmetic',
     pathMatch: 'full'
   },
   {
@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'BasicArithmetic',
     loadChildren: () => import('./arithmetic/arithmetic.module').then( m => m.ArithmeticModule)
+  },
+  {
+    path: 'Shapes2D',
+    loadChildren: () => import('./two-dimensional-shapes/two-dimensional-shapes.module').then(m => m.TwoDimensionalShapesModule)
   }
 ];
 
