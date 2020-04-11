@@ -14,8 +14,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ page }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Test 123</a></p>
-  </div>
+  <form id="arithmeticForm" [formGroup]="arithmeticForm">
+    <ion-item id="rounded">
+      <ion-label fixed>{{ expression }} = </ion-label>
+      <ion-input id="expressionAnswer" name="input" ngDefaultControl formControlName="input" type="text" value=""></ion-input>
+    </ion-item>
+  <button  ion-button color="primary" (click)="arithmeticFormSubmit()" block [disabled]="!result && !arithmeticForm.valid">{{buttonText}}</button>
+  </form>
+  <span name="textResult" ngDefaultControl [(ngModel)]="resultText">{{resultText}}</span>
 </ion-content>
