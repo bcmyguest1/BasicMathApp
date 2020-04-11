@@ -4,18 +4,22 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'game/Home',
+    redirectTo: 'Graphing',
     pathMatch: 'full'
   },
   {
-    path: 'game/:id',
-    loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
+    path: 'Graphing',
+    loadChildren: () => import('./game/game.module').then( m => m.GamePageModule),
+  },
+  {
+    path: 'BasicArithmetic',
+    loadChildren: () => import('./arithmetic/arithmetic.module').then( m => m.ArithmeticModule)
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, enableTracing: true })
   ],
   exports: [RouterModule]
 })

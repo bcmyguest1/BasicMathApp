@@ -12,20 +12,20 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
+    // {
+    //   title: 'Welcome',
+    //   url: '/game/Home',
+    //   icon: 'mail'
+    // },
     {
-      title: 'Welcome',
-      url: '/game/Home',
-      icon: 'mail'
+      title: 'Basic Arithmetic',
+      url: '/BasicArithmetic',
+      icon: 'trash'
     },
     {
       title: 'Graphing',
-      url: '/game/Graphing',
+      url: '/Graphing',
       icon: 'paper-plane'
-    },
-    {
-      title: 'Basic Arithmetic',
-      url: '/game/BasicArithmetic',
-      icon: 'trash'
     }
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('game/')[1];
+    const path = window.location.pathname;
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
