@@ -8,14 +8,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ page }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ page }}</strong>
-    <p>Explore<a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Test 123</a></p>
-  </div>
+  <ion-label>Question: Which shape is the {{questionShape}}?</ion-label>
+  <ion-list auto-hide="false" *ngFor="let shape of selectedShapes; let i = index">
+    <ion-item>
+      <ion-label>{{shape}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
